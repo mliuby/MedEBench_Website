@@ -1,0 +1,151 @@
+/* Global Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9; /* Light, neutral background */
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #2c3e50;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+p, li {
+  font-size: 1.1rem;
+}
+
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  background-color: white; /* Clean header background */
+  color: #2c3e50;
+  text-align: center;
+  padding: 3rem 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.title-bar {
+  display: inline-flex; /* Keep icon and text inline */
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* Spacing between icon and text */
+  margin-bottom: 0.5rem;
+}
+
+.title-bar img {
+  height: 3.5rem; /* Slightly larger than text */
+  width: auto;
+  vertical-align: middle;
+}
+
+.title-bar h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0;
+  color: #2c3e50;
+}
+
+header .tagline {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+header .authors {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+header .authors sup {
+  font-size: 0.8rem;
+}
+
+header .buttons {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+header .buttons a {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #0077cc;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+header .buttons a:hover {
+  background-color: #005fa3;
+}
+
+ul {
+  list-style: disc inside;
+  padding-left: 1rem;
+}
+
+img, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+p code {
+  background-color: #f0f0f0;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 2rem;
+  background-color: white;
+  box-shadow: 0 -1px 5px rgba(0,0,0,0.05);
+}
+
+.image-row {
+  display: flex;
+  justify-content: center; /* Center the images horizontally */
+  align-items: center;     /* Align images vertically */
+  gap: 20px;               /* Space between images */
+  flex-wrap: wrap;         /* Wrap on smaller screens */
+}
+
+.image-row img {
+  max-width: 45%;          /* Limit width of each image */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}

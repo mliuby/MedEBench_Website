@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedEBench: Revisiting Text-Instructed Image Editing on Medical Domain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles/style.css" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      background-color: white;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    header img {
+      height: 50px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    header h1 {
+      display: inline-block;
+      font-size: 2.2rem;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.8rem;  /* Previously 1.2rem */
+      margin-top: 0.5rem;
+    }
+
+    .authors {
+      font-size: 1rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .authors sup {
+      font-size: 0.8rem;
+    }
+
+    .buttons {
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+
+    .buttons a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #0077cc;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .buttons a:hover {
+      background-color: #005fa3;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 2rem;
+    }
+
+    img, iframe {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    ul {
+      list-style: disc inside;
+      padding-left: 1rem;
+    }
+
+    p code {
+      background-color: #f0f0f0;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+      background-color: white;
+      box-shadow: 0 -1px 5px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="title-bar">
+      <img src="assets/images/title_icon_3 (1).png" alt="MedEBench Icon">
+      <h1>MedEBench</h1>
+    </div>
+    <p>Revisiting Text-Instructed Image Editing on Medical Domain</p>
+    <div class="authors">
+      <p>
+        <strong>
+          <a href="https://mliuby.github.io/" target="_blank">Minghao Liu<sup>♥</sup></a> &nbsp;
+          <a href="https://aclanthology.org/people/z/zhitao-he/" target="_blank">Zhitao He<sup>♥</sup></a> &nbsp;
+          <a href="https://zhiyuan.fan/" target="_blank">Zhiyuan Fan<sup>♥</sup></a> &nbsp;
+          <a href="https://eaglew.github.io/" target="_blank">Qingyun Wang<sup>♦</sup></a> &nbsp;
+          <a href="https://mayrfung.github.io/" target="_blank">Yi R. (May) Fung<sup>♥</sup></a>
+        </strong>
+      </p>
+      <p><sup>♥</sup> HKUST &nbsp; | &nbsp; <sup>♦</sup> UIUC</p>
+    </div>
+    <div class="buttons">
+      <a href="#">arXiv</a>
+      <a href="https://github.com/mliuby/MedGen" target="_blank">Code</a>
+      <a href="https://huggingface.co/datasets/LIUMinghao/MedEBench" target="_blank">HF Dataset</a>
+    </div>
+  </header>
+  
+
+  <main class="container">
+    <section>
+      <h2>Abstract</h2>
+      <p>Text-guided image editing has seen rapid progress in natural image domains, but its adaptation to medical imaging remains limited and lacks standardized evaluation. Clinically, such editing holds promise for simulating surgical outcomes, creating personalized teaching materials, and enhancing patient communication. To bridge this gap, we introduce <strong>MedEBench</strong>, a comprehensive benchmark for evaluating text-guided medical image editing. It consists of 1,182 clinically sourced image-prompt triplets spanning 70 tasks across 13 anatomical regions. MedEBench offers three key contributions: (1) a clinically relevant evaluation framework covering Editing Accuracy, Contextual Preservation, and Visual Quality, supported by detailed descriptions of expected change and ROI (Region of Interest) masks; (2) a systematic comparison of seven state-of-the-art models, revealing common failure patterns; and (3) a failure analysis protocol based on attention grounding, using IoU (Intersection over Union Ratio) between attention maps and ROIs to identify mislocalization. MedEBench provides a solid foundation for developing and evaluating reliable, clinically meaningful medical image editing systems.</p>
+    </section>
+
+    <section>
+      <h2>MedEBench Overview</h2>
+      <img src="assets\images\MedEBench_overview.png" alt="MedEBench Overview">
+      <p>MedEBench consists of 1,182 samples across 13 categories. Each sample includes an input image, a reference image, an editing prompt, an ROI mask, and a detailed description of expected change.</p>
+    </section>
+
+    <section class="image-row">
+      <img src="assets/images/Organ_distribution.png" alt="Organ Distribution">
+      <img src="assets/images/dataset_properties.png" alt="Dataset Property">
+    </section>
+
+    <section>
+      <iframe src="assets/images/task_table.pdf" width="100%" height="1200px" style="border: none; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);"></iframe>
+    </section>
+    
+
+    <section>
+      <h2>Evaluation Metrics</h2>
+      <p><strong>Contextual Preservation:</strong> We evaluate whether the model preserves regions unrelated to the intended edit by computing the Structural Similarity Index (SSIM) between the previous image \( I_{\text{prev}} \) and the edited image \( I_{\text{edit}} \), excluding the region-of-interest (ROI) mask \( \mathcal{R} \). The contextual SSIM is defined as:</p>
+      <p style="text-align: center; font-size: 1.1rem;">
+        \( \text{SSIM}_{\text{context}} = \text{SSIM}(I_{\text{prev}} \mid \bar{\mathcal{R}}, \; I_{\text{edit}} \mid \bar{\mathcal{R}}) \)
+      </p>
+      <p>This metric captures how well the model maintains anatomical consistency outside the edited region.</p>
+    
+      <p><strong>Editing Accuracy and Visual Quality:</strong> We use GPT-4o, a multimodal language model with visual reasoning capabilities, to evaluate both metrics. For each sample, GPT-4o receives the description of change, previous image, edited image, and ground truth image. It follows a structured two-step protocol:</p>
+    
+      <ul>
+        <li><strong>Step 1: Visual Difference Description.</strong> GPT-4o compares the previous and edited images to describe all visible changes—what has been added, removed, or modified—and identifies the anatomical regions affected.</li>
+        <li><strong>Step 2: Scoring.</strong> Guided by the reference description of change, GPT-4o evaluates:
+          <ul>
+            <li><strong>Editing Accuracy (0–10):</strong> How well the actual edits match the intended transformation, with penalties for irrelevant or missing changes.</li>
+            <li><strong>Visual Quality (0–10):</strong> The realism, clarity, and visual fidelity of the edited image.</li>
+          </ul>
+        </li>
+      </ul>
+    
+      <img src="assets/images/Detailed_eval_pipe (1).png" alt="Detailed Evaluation Pipeline">
+    </section>
+    
+    <section>
+      <h2>Experiment</h2>
+      <img src="assets/images/comparison_table.png" alt="Comparison Table">
+      <h2 style="font-size: 1.4rem; margin-top: 1rem;">Visual Comparison of Editing Results</h2>
+      <table style="width: 100%; border-collapse: collapse; text-align: center;">
+        <thead>
+          <tr>
+            <th>Previous</th>
+            <th>Truth</th>
+            <th>Gemini2</th>
+            <th>SeedX</th>
+            <th>Imagic</th>
+            <th>IP2P</th>
+            <th>InstructDiff.</th>
+            <th>PaintByInpaint</th>
+            <th>ICEdit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="assets/images/examples/64_Previous.png" width="80"></td>
+            <td><img src="assets/images/examples/64_Ground_Truth.png" width="80"></td>
+            <td><img src="assets/images/examples/64_Gemini_2_Flash.png" width="80"></td>
+            <td><img src="assets/images/examples/64_SeedX.png" width="80"></td>
+            <td><img src="assets/images/examples/64_Imagic_SD.png" width="80"></td>
+            <td><img src="assets/images/examples/64_InstructPix2Pix.png" width="80"></td>
+            <td><img src="assets/images/examples/64_InstructDiffusion.png" width="80"></td>
+            <td><img src="assets/images/examples/64_Paint-by-Inpaint.png" width="80"></td>
+            <td><img src="assets/images/examples/64_ICEdit.png" width="80"></td>
+          </tr>
+          <tr>
+            <td colspan="2" style="font-size: 0.9rem;">Remove the diminutive polyp.</td>
+            <td>0.8/0.8/0.9</td>
+            <td>0.1/1.0/1.0</td>
+            <td>0.9/0.9/0.9</td>
+            <td>0.6/0.7/1.0</td>
+            <td>0.0/0.3/0.9</td>
+            <td>0.2/0.2/0.8</td>
+            <td>0.9/0.9/1.0</td>
+          </tr>
+
+          <tr>
+            <td><img src="assets/images/examples/45_Previous.png" width="80"></td>
+            <td><img src="assets/images/examples/45_Ground_Truth.png" width="80"></td>
+            <td><img src="assets/images/examples/45_Gemini_2_Flash.png" width="80"></td>
+            <td><img src="assets/images/examples/45_SeedX.png" width="80"></td>
+            <td><img src="assets/images/examples/45_Imagic_SD.png" width="80"></td>
+            <td><img src="assets/images/examples/45_InstructPix2Pix.png" width="80"></td>
+            <td><img src="assets/images/examples/45_InstructDiffusion.png" width="80"></td>
+            <td><img src="assets/images/examples/45_Paint-by-Inpaint.png" width="80"></td>
+            <td><img src="assets/images/examples/45_ICEdit.png" width="80"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Remove the dental black stains.</td>
+            <td>0.9/0.8/0.8</td>
+            <td>0.7/0.5/0.9</td>
+            <td>0.9/0.8/0.7</td>
+            <td>0.5/0.5/0.9</td>
+            <td>0.5/0.7/0.7</td>
+            <td>0.2/0.1/0.6</td>
+            <td>0.0/0.5/0.8</td>
+          </tr>
+
+          <tr>
+            <td><img src="assets/images/examples/53_Previous.png" width="80"></td>
+            <td><img src="assets/images/examples/53_Ground_Truth.png" width="80"></td>
+            <td><img src="assets/images/examples/53_Gemini_2_Flash.png" width="80"></td>
+            <td><img src="assets/images/examples/53_SeedX.png" width="80"></td>
+            <td><img src="assets/images/examples/53_Imagic_SD.png" width="80"></td>
+            <td><img src="assets/images/examples/53_InstructPix2Pix.png" width="80"></td>
+            <td><img src="assets/images/examples/53_InstructDiffusion.png" width="80"></td>
+            <td><img src="assets/images/examples/53_Paint-by-Inpaint.png" width="80"></td>
+            <td><img src="assets/images/examples/53_ICEdit.png" width="80"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Remove intestinal polyps.</td>
+            <td>0.8/0.8/0.8</td>
+            <td>0.2/0.3/0.2</td>
+            <td>0.2/0.7/0.5</td>
+            <td>0.3/0.7/0.8</td>
+            <td>0.1/0.5/0.7</td>
+            <td>0.0/0.3/0.3</td>
+            <td>0.2/0.6/0.7</td>
+          </tr>
+
+          <tr>
+            <td><img src="assets/images/examples/998_Previous.png" width="80"></td>
+            <td><img src="assets/images/examples/998_Ground_Truth.png" width="80"></td>
+            <td><img src="assets/images/examples/998_Gemini_2_Flash.png" width="80"></td>
+            <td><img src="assets/images/examples/998_SeedX.png" width="80"></td>
+            <td><img src="assets/images/examples/998_Imagic_SD.png" width="80"></td>
+            <td><img src="assets/images/examples/998_InstructPix2Pix.png" width="80"></td>
+            <td><img src="assets/images/examples/998_InstructDiffusion.png" width="80"></td>
+            <td><img src="assets/images/examples/998_Paint-by-Inpaint.png" width="80"></td>
+            <td><img src="assets/images/examples/998_ICEdit.png" width="80"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Fix damaged front teeth.</td>
+            <td>0.9/0.8/0.9</td>
+            <td>0.0/0.5/0.8</td>
+            <td>0.7/0.6/0.5</td>
+            <td>0.0/0.0/0.7</td>
+            <td>0.2/0.5/0.6</td>
+            <td>0.9/0.9/0.7</td>
+            <td>0.0/0.4/0.9</td>
+          </tr>
+
+          <tr>
+            <td><img src="assets/images/examples/951_Previous.png" width="80"></td>
+            <td><img src="assets/images/examples/951_Ground_Truth.png" width="80"></td>
+            <td><img src="assets/images/examples/951_Gemini_2_Flash.png" width="80"></td>
+            <td><img src="assets/images/examples/951_SeedX.png" width="80"></td>
+            <td><img src="assets/images/examples/951_Imagic_SD.png" width="80"></td>
+            <td><img src="assets/images/examples/951_InstructPix2Pix.png" width="80"></td>
+            <td><img src="assets/images/examples/951_InstructDiffusion.png" width="80"></td>
+            <td><img src="assets/images/examples/951_Paint-by-Inpaint.png" width="80"></td>
+            <td><img src="assets/images/examples/951_ICEdit.png" width="80"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Reconstruct the ear.</td>
+            <td>0.9/0.8/0.6</td>
+            <td>0.2/0.4/0.7</td>
+            <td>0.7/0.6/0.4</td>
+            <td>0.2/0.3/0.9</td>
+            <td>0.0/0.3/0.3</td>
+            <td>0.0/0.2/0.4</td>
+            <td>0.8/0.7/0.9</td>
+          </tr>
+
+          <tr>
+            <td><img src="assets/images/examples/698_Previous.png" width="80"></td>
+            <td><img src="assets/images/examples/698_Ground_Truth.png" width="80"></td>
+            <td><img src="assets/images/examples/698_Gemini_2_Flash.png" width="80"></td>
+            <td><img src="assets/images/examples/698_SeedX.png" width="80"></td>
+            <td><img src="assets/images/examples/698_Imagic_SD.png" width="80"></td>
+            <td><img src="assets/images/examples/698_InstructPix2Pix.png" width="80"></td>
+            <td><img src="assets/images/examples/698_InstructDiffusion.png" width="80"></td>
+            <td><img src="assets/images/examples/698_Paint-by-Inpaint.png" width="80"></td>
+            <td><img src="assets/images/examples/698_ICEdit.png" width="80"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Reconstruct lower eyelid.</td>
+            <td>0.9/0.9/0.6</td>
+            <td>0.4/0.5/0.9</td>
+            <td>0.7/0.9/0.6</td>
+            <td>0.3/0.8/0.9</td>
+            <td>0.2/0.9/0.9</td>
+            <td>0.4/0.8/0.6</td>
+            <td>0.2/0.9/0.7</td>
+          </tr>
+          
+          <tr>
+            <td><img src="assets/images/examples/54_Previous.png" width="80"></td>
+            <td><img src="assets/images/examples/54_Ground_Truth.png" width="80"></td>
+            <td><img src="assets/images/examples/54_Gemini_2_Flash.png" width="80"></td>
+            <td><img src="assets/images/examples/54_SeedX.png" width="80"></td>
+            <td><img src="assets/images/examples/54_Imagic_SD.png" width="80"></td>
+            <td><img src="assets/images/examples/54_InstructPix2Pix.png" width="80"></td>
+            <td><img src="assets/images/examples/54_InstructDiffusion.png" width="80"></td>
+            <td><img src="assets/images/examples/54_Paint-by-Inpaint.png" width="80"></td>
+            <td><img src="assets/images/examples/54_ICEdit.png" width="80"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Remove intestinal adenoma.</td>
+            <td>0.8/0.6/0.9</td>
+            <td>0.7/0.7/0.7</td>
+            <td>0.2/0.5/0.3</td>
+            <td>0.0/0.6/0.8</td>
+            <td>0.0/0.3/0.2</td>
+            <td>0.0/0.4/0.5</td>
+            <td>0.0/1.0/0.9</td>
+          </tr>
+          
+          <tr>
+            <td><img src="assets/images/examples/34_Previous.png" width="80"></td>
+            <td><img src="assets/images/examples/34_Ground_Truth.png" width="80"></td>
+            <td><img src="assets/images/examples/34_Gemini_2_Flash.png" width="80"></td>
+            <td><img src="assets/images/examples/34_SeedX.png" width="80"></td>
+            <td><img src="assets/images/examples/34_Imagic_SD.png" width="80"></td>
+            <td><img src="assets/images/examples/34_InstructPix2Pix.png" width="80"></td>
+            <td><img src="assets/images/examples/34_InstructDiffusion.png" width="80"></td>
+            <td><img src="assets/images/examples/34_Paint-by-Inpaint.png" width="80"></td>
+            <td><img src="assets/images/examples/34_ICEdit.png" width="80"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Remove wisdom teeth.</td>
+            <td>0.6/0.7/0.8</td>
+            <td>0.5/0.4/0.8</td>
+            <td>0.7/0.6/0.4</td>
+            <td>0.2/0.1/0.8</td>
+            <td>0.7/0.6/0.5</td>
+            <td>0.0/0.2/0.5</td>
+            <td>0.2/0.6/0.8</td>
+          </tr>
+          
+          <tr>
+            <td><img src="assets/images/examples/48_Previous.png" width="80"></td>
+            <td><img src="assets/images/examples/48_Ground_Truth.png" width="80"></td>
+            <td><img src="assets/images/examples/48_Gemini_2_Flash.png" width="80"></td>
+            <td><img src="assets/images/examples/48_SeedX.png" width="80"></td>
+            <td><img src="assets/images/examples/48_Imagic_SD.png" width="80"></td>
+            <td><img src="assets/images/examples/48_InstructPix2Pix.png" width="80"></td>
+            <td><img src="assets/images/examples/48_InstructDiffusion.png" width="80"></td>
+            <td><img src="assets/images/examples/48_Paint-by-Inpaint.png" width="80"></td>
+            <td><img src="assets/images/examples/48_ICEdit.png" width="80"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Remove dental black stains.</td>
+            <td>0.9/0.8/0.9</td>
+            <td>0.0/0.3/0.8</td>
+            <td>0.2/0.5/0.8</td>
+            <td>0.8/0.7/0.9</td>
+            <td>0.0/0.0/0.7</td>
+            <td>0.0/0.2/0.8</td>
+            <td>0.1/0.3/0.9</td>
+          </tr>
+          
+          
+          
+          <!-- Add more rows as needed, following the same pattern -->
+        </tbody>
+      </table>
+      <p style="font-size: 0.9rem; margin-top: 10px;">Each row includes the previous and ground truth images, followed by outputs from seven models. Scores below each output denote EA (Editing Accuracy), VQ (Visual Quality), and CP (Masked SSIM) (all in [0, 1] range).</p>
+    </section>
+
+    <section style="margin-bottom: 2rem;">
+      <h2>Learning Paradigms Comparison</h2>
+      <ul style="list-style: disc; padding-left: 1.5rem; line-height: 1.8;">
+        <li><strong>Objective:</strong> Compare fine-tuning (InstructPix2Pix) and in-context learning (Gemini) on six tasks (30 samples each).</li>
+        <li><strong>Fine-tuning:</strong>
+          <ul>
+            <li>Fine-tunes U-Net backbone with input, instruction, and ground-truth triplets.</li>
+            <li>Effective for reconstruction tasks; accuracy improves with more samples.</li>
+            <li>Some tasks (e.g., Remove Wisdom Teeth, Remove Moles) show diminishing returns.</li>
+            <li>Risk of losing contextual consistency when overfitting.</li>
+          </ul>
+        </li>
+        <li><strong>In-Context Learning:</strong>
+          <ul>
+            <li>Uses few-shot prompting with demonstration triplets + test image/instruction.</li>
+            <li>Limited effectiveness: adding more demonstrations does not improve accuracy.</li>
+            <li>Struggles to distinguish test inputs from context examples, leading to confusion and reduced contextual consistency.</li>
+          </ul>
+        </li>
+        <li><strong>Conclusion:</strong> Fine-tuning benefits pixel-level medical editing; in-context learning struggles with fine-grained tasks.</li>
+      </ul>
+    
+      <div style="text-align: center; margin-top: 2rem;">
+        <img src="assets/images/finetune_incontext.png" alt="Fine-tuning vs In-context Learning" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        <p style="font-size: 0.9rem; color: #555;">Comparison of Fine-tuning and In-context Learning</p>
+      </div>
+    </section>
+    
+    
+
+    <section style="display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap;">
+      <div style="flex: 1 1 500px; min-width: 300px;">
+        <h2>Failure Analysis via Attention</h2>
+        <ul style="list-style: disc; padding-left: 1.5rem; line-height: 1.8;">
+          <li>We analyze <strong>InstructPix2Pix</strong> to understand its <em>high context preservation</em> but <em>low editing accuracy</em>.</li>
+          <li>The model uses <strong>cross-attention maps</strong> to connect prompt tokens (e.g., "lip", "ear") to image regions.</li>
+          <li>For each key visual token \( t_c \):
+            <ul>
+              <li>Extract cross-attention maps over all diffusion steps.</li>
+              <li>Average them: 
+                <div style="text-align: center; margin: 0.5rem 0;">
+                  \( \bar{a}_{t_c} = \frac{1}{S} \sum_{s=1}^{S} a^{(s)}_{t_c} \)
+                </div>
+              </li>
+              <li>Reshape, normalize, and binarize via scaled Otsu threshold:
+                <div style="text-align: center; margin: 0.5rem 0;">
+                  \( A = \left( \frac{\bar{A}_{t_c} - \min}{\max - \min} > \alpha \cdot \tau_{\text{Otsu}} \right) \)
+                </div>
+                with \( \alpha = 1.3 \).
+              </li>
+            </ul>
+          </li>
+          <li>Compare with ROI mask \(M\) using Intersection-over-Union (IoU):
+            <div style="text-align: center; margin: 0.5rem 0;">
+              \( \text{IoU} = \frac{|A \cap M|}{|A \cup M|} \)
+            </div>
+          </li>
+          <li><strong>Interpretation:</strong>
+            <ul>
+              <li><strong>High IoU:</strong> Localizes correctly but edits conservatively (e.g., samples 5–6).</li>
+              <li><strong>Low IoU:</strong> Fails to localize/edit (e.g., samples 1–4).</li>
+            </ul>
+          </li>
+          <li>A higher IoU indicates stronger spatial grounding of visual concepts.</li>
+        </ul>
+      </div>
+    
+      <div style="flex: 1 1 300px; min-width: 280px; text-align: center;">
+        <img src="assets/images/attention_grounding.png" alt="Attention Grounding Example" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        <p style="font-size: 0.9rem; color: #555;">Illustration of attention-based failure analysis</p>
+      </div>
+    </section>
+    
+    <section>
+      <h2>Key Insights and Takeaways</h2>
+    
+      <div style="background-color: #e6f4f1; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+        <p><strong>Large multimodal models outperform open-source alternatives on complex medical edits.</strong> Gemini 2 Flash consistently leads in Editing Accuracy (EA), Visual Quality (VQ), and FID, with the largest gaps in internal organ tasks (e.g., gastrointestinal tract, spine, teeth), where fine-grained structures and spatial reasoning are critical. Open-source models like ICEdit remain competitive but lag in high-precision scenarios.</p>
+      </div>
+    
+      <div style="background-color: #fef3e2; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+        <p><strong>Region-specific challenges persist.</strong> Models struggle with repetitive or occluded anatomy (e.g., hands, spine, teeth), where structures are small or overlapped, making precise localization and editing difficult. In contrast, tasks involving superficial structures (e.g., skin blemishes, nose shape) are more reliably handled, showing higher EA and VQ scores.</p>
+      </div>
+    
+      <div style="background-color: #ece7f6; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+        <p><strong>Fine-tuning aids domain adaptation; in-context learning shows limited generalization.</strong> Fine-tuning models like InstructPix2Pix on medical image-editing triplets improves performance, even with limited data. However, in-context learning with large multimodal models like Gemini struggles to generalize fine-grained, pixel-level medical editing tasks. Increasing demonstration samples in prompts does not improve accuracy and often reduces contextual consistency, highlighting the challenges of applying in-context learning to clinical scenarios.</p>
+      </div>
+    
+      <div style="background-color: #fbeaea; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+        <p><strong>Attention maps provide diagnostic insights.</strong> By comparing attention heatmaps and Region-of-Interest (ROI) masks, we find two key failure patterns: (1) <strong>High IoU but low EA</strong>: The model attends to the correct region but fails to apply the desired edit, indicating conservative or incomplete changes (e.g., concept removal tasks like removing moles). (2) <strong>Low IoU</strong>: The model attends to irrelevant regions, failing both localization and editing, which often occurs in addition or reconstruction tasks (e.g., repairing a nose or adding missing teeth). These insights guide model improvement for medical editing tasks.</p>
+      </div>
+    
+    </section>
+    
+    
+  </main>
+
+
+
+  <footer>
+    &copy; 2025 MedEBench. All rights reserved.
+  </footer>
+</body>
+</html>

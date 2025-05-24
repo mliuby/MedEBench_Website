@@ -1,0 +1,520 @@
+{
+  "64": {
+    "Gemini 2 Flash": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 5.0,
+      "gpt4o_visual_quality_detailed": 8.0
+    },
+    "SeedX": {
+      "masked_ssim": 1.0,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 10.0
+    },
+    "Imagic SD": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 9.0,
+      "gpt4o_visual_quality_detailed": 9.0
+    },
+    "InstructPix2Pix": {
+      "masked_ssim": 1.0,
+      "gpt4o_editing_accuracy_detailed": 6.0,
+      "gpt4o_visual_quality_detailed": 7.0
+    },
+    "InstructDiffusion": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 3.0
+    },
+    "Paint-by-Inpaint": {
+      "masked_ssim": 0.8,
+      "gpt4o_editing_accuracy_detailed": 2.0,
+      "gpt4o_visual_quality_detailed": 2.0
+    },
+    "ICEdit": {
+      "masked_ssim": 1.0,
+      "gpt4o_editing_accuracy_detailed": 9.0,
+      "gpt4o_visual_quality_detailed": 9.0
+    }
+  },
+  "45": {
+    "Gemini 2 Flash": {
+      "masked_ssim": 0.8,
+      "gpt4o_editing_accuracy_detailed": 9.0,
+      "gpt4o_visual_quality_detailed": 8.0
+    },
+    "SeedX": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 7.0,
+      "gpt4o_visual_quality_detailed": 5.0
+    },
+    "Imagic SD": {
+      "masked_ssim": 0.7,
+      "gpt4o_editing_accuracy_detailed": 9.0,
+      "gpt4o_visual_quality_detailed": 8.0
+    },
+    "InstructPix2Pix": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 3.0,
+      "gpt4o_visual_quality_detailed": 5.0
+    },
+    "InstructDiffusion": {
+      "masked_ssim": 0.7,
+      "gpt4o_editing_accuracy_detailed": 5.0,
+      "gpt4o_visual_quality_detailed": 7.0
+    },
+    "Paint-by-Inpaint": {
+      "masked_ssim": 0.6,
+      "gpt4o_editing_accuracy_detailed": 2.0,
+      "gpt4o_visual_quality_detailed": 1.0
+    },
+    "ICEdit": {
+      "masked_ssim": 0.8,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 5.0
+    }
+  },
+  "53": {
+    "Gemini 2 Flash": {
+      "masked_ssim": 0.8,
+      "gpt4o_editing_accuracy_detailed": 8.0,
+      "gpt4o_visual_quality_detailed": 8.0
+    },
+    "SeedX": {
+      "masked_ssim": 0.2,
+      "gpt4o_editing_accuracy_detailed": 2.0,
+      "gpt4o_visual_quality_detailed": 3.0
+    },
+    "Imagic SD": {
+      "masked_ssim": 0.5,
+      "gpt4o_editing_accuracy_detailed": 2.0,
+      "gpt4o_visual_quality_detailed": 7.0
+    },
+    "InstructPix2Pix": {
+      "masked_ssim": 0.8,
+      "gpt4o_editing_accuracy_detailed": 3.0,
+      "gpt4o_visual_quality_detailed": 7.0
+    },
+    "InstructDiffusion": {
+      "masked_ssim": 0.7,
+      "gpt4o_editing_accuracy_detailed": 1.0,
+      "gpt4o_visual_quality_detailed": 5.0
+    },
+    "Paint-by-Inpaint": {
+      "masked_ssim": 0.3,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 3.0
+    },
+    "ICEdit": {
+      "masked_ssim": 0.7,
+      "gpt4o_editing_accuracy_detailed": 2.0,
+      "gpt4o_visual_quality_detailed": 6.0
+    }
+  },
+  "998": {
+    "Gemini 2 Flash": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 9.0,
+      "gpt4o_visual_quality_detailed": 8.0
+    },
+    "SeedX": {
+      "masked_ssim": 0.8,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 5.0
+    },
+    "Imagic SD": {
+      "masked_ssim": 0.5,
+      "gpt4o_editing_accuracy_detailed": 7.0,
+      "gpt4o_visual_quality_detailed": 6.0
+    },
+    "InstructPix2Pix": {
+      "masked_ssim": 0.7,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 0.0
+    },
+    "InstructDiffusion": {
+      "masked_ssim": 0.6,
+      "gpt4o_editing_accuracy_detailed": 2.0,
+      "gpt4o_visual_quality_detailed": 5.0
+    },
+    "Paint-by-Inpaint": {
+      "masked_ssim": 0.7,
+      "gpt4o_editing_accuracy_detailed": 9.0,
+      "gpt4o_visual_quality_detailed": 9.0
+    },
+    "ICEdit": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 4.0
+    }
+  },
+  "951": {
+    "Gemini 2 Flash": {
+      "masked_ssim": 0.6,
+      "gpt4o_editing_accuracy_detailed": 9.0,
+      "gpt4o_visual_quality_detailed": 8.0
+    },
+    "SeedX": {
+      "masked_ssim": 0.7,
+      "gpt4o_editing_accuracy_detailed": 2.0,
+      "gpt4o_visual_quality_detailed": 4.0
+    },
+    "Imagic SD": {
+      "masked_ssim": 0.4,
+      "gpt4o_editing_accuracy_detailed": 7.0,
+      "gpt4o_visual_quality_detailed": 6.0
+    },
+    "InstructPix2Pix": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 2.0,
+      "gpt4o_visual_quality_detailed": 3.0
+    },
+    "InstructDiffusion": {
+      "masked_ssim": 0.3,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 3.0
+    },
+    "Paint-by-Inpaint": {
+      "masked_ssim": 0.4,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 2.0
+    },
+    "ICEdit": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 8.0,
+      "gpt4o_visual_quality_detailed": 7.0
+    }
+  },
+  "752": {
+    "Gemini 2 Flash": {
+      "masked_ssim": 1.0,
+      "gpt4o_editing_accuracy_detailed": 10.0,
+      "gpt4o_visual_quality_detailed": 10.0
+    },
+    "SeedX": {
+      "masked_ssim": 1.0,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 7.0
+    },
+    "Imagic SD": {
+      "masked_ssim": 0.7,
+      "gpt4o_editing_accuracy_detailed": 3.0,
+      "gpt4o_visual_quality_detailed": 4.0
+    },
+    "InstructPix2Pix": {
+      "masked_ssim": 1.0,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 8.0
+    },
+    "InstructDiffusion": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 7.0
+    },
+    "Paint-by-Inpaint": {
+      "masked_ssim": 0.6,
+      "gpt4o_editing_accuracy_detailed": 3.0,
+      "gpt4o_visual_quality_detailed": 4.0
+    },
+    "ICEdit": {
+      "masked_ssim": 1.0,
+      "gpt4o_editing_accuracy_detailed": 10.0,
+      "gpt4o_visual_quality_detailed": 9.0
+    }
+  },
+  "698": {
+    "Gemini 2 Flash": {
+      "masked_ssim": 0.6,
+      "gpt4o_editing_accuracy_detailed": 9.0,
+      "gpt4o_visual_quality_detailed": 9.0
+    },
+    "SeedX": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 4.0,
+      "gpt4o_visual_quality_detailed": 5.0
+    },
+    "Imagic SD": {
+      "masked_ssim": 0.6,
+      "gpt4o_editing_accuracy_detailed": 9.0,
+      "gpt4o_visual_quality_detailed": 9.0
+    },
+    "InstructPix2Pix": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 9.0,
+      "gpt4o_visual_quality_detailed": 8.0
+    },
+    "InstructDiffusion": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 9.0,
+      "gpt4o_visual_quality_detailed": 9.0
+    },
+    "Paint-by-Inpaint": {
+      "masked_ssim": 0.7,
+      "gpt4o_editing_accuracy_detailed": 9.0,
+      "gpt4o_visual_quality_detailed": 8.0
+    },
+    "ICEdit": {
+      "masked_ssim": 0.7,
+      "gpt4o_editing_accuracy_detailed": 9.0,
+      "gpt4o_visual_quality_detailed": 9.0
+    }
+  },
+  "689": {
+    "Gemini 2 Flash": {
+      "masked_ssim": 0.6,
+      "gpt4o_editing_accuracy_detailed": 2.0,
+      "gpt4o_visual_quality_detailed": 5.0
+    },
+    "SeedX": {
+      "masked_ssim": 0.8,
+      "gpt4o_editing_accuracy_detailed": 2.0,
+      "gpt4o_visual_quality_detailed": 5.0
+    },
+    "Imagic SD": {
+      "masked_ssim": 0.4,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 6.0
+    },
+    "InstructPix2Pix": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 8.0
+    },
+    "InstructDiffusion": {
+      "masked_ssim": 0.6,
+      "gpt4o_editing_accuracy_detailed": 8.0,
+      "gpt4o_visual_quality_detailed": 7.0
+    },
+    "Paint-by-Inpaint": {
+      "masked_ssim": 0.6,
+      "gpt4o_editing_accuracy_detailed": 2.0,
+      "gpt4o_visual_quality_detailed": 3.0
+    },
+    "ICEdit": {
+      "masked_ssim": 0.5,
+      "gpt4o_editing_accuracy_detailed": 7.0,
+      "gpt4o_visual_quality_detailed": 7.0
+    }
+  },
+  "18": {
+    "Gemini 2 Flash": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 5.0,
+      "gpt4o_visual_quality_detailed": 7.0
+    },
+    "SeedX": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 6.0
+    },
+    "Imagic SD": {
+      "masked_ssim": 0.7,
+      "gpt4o_editing_accuracy_detailed": 1.0,
+      "gpt4o_visual_quality_detailed": 3.0
+    },
+    "InstructPix2Pix": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 6.0,
+      "gpt4o_visual_quality_detailed": 4.0
+    },
+    "InstructDiffusion": {
+      "masked_ssim": 0.7,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 0.0
+    },
+    "Paint-by-Inpaint": {
+      "masked_ssim": 0.8,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 1.0
+    },
+    "ICEdit": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 2.0,
+      "gpt4o_visual_quality_detailed": 2.0
+    }
+  },
+  "54": {
+    "Gemini 2 Flash": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 5.0,
+      "gpt4o_visual_quality_detailed": 6.0
+    },
+    "SeedX": {
+      "masked_ssim": 0.7,
+      "gpt4o_editing_accuracy_detailed": 7.0,
+      "gpt4o_visual_quality_detailed": 7.0
+    },
+    "Imagic SD": {
+      "masked_ssim": 0.3,
+      "gpt4o_editing_accuracy_detailed": 2.0,
+      "gpt4o_visual_quality_detailed": 5.0
+    },
+    "InstructPix2Pix": {
+      "masked_ssim": 0.8,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 6.0
+    },
+    "InstructDiffusion": {
+      "masked_ssim": 0.2,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 3.0
+    },
+    "Paint-by-Inpaint": {
+      "masked_ssim": 0.5,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 4.0
+    },
+    "ICEdit": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 10.0
+    }
+  },
+  "34": {
+    "Gemini 2 Flash": {
+      "masked_ssim": 0.8,
+      "gpt4o_editing_accuracy_detailed": 6.0,
+      "gpt4o_visual_quality_detailed": 7.0
+    },
+    "SeedX": {
+      "masked_ssim": 0.8,
+      "gpt4o_editing_accuracy_detailed": 5.0,
+      "gpt4o_visual_quality_detailed": 4.0
+    },
+    "Imagic SD": {
+      "masked_ssim": 0.4,
+      "gpt4o_editing_accuracy_detailed": 7.0,
+      "gpt4o_visual_quality_detailed": 6.0
+    },
+    "InstructPix2Pix": {
+      "masked_ssim": 0.8,
+      "gpt4o_editing_accuracy_detailed": 2.0,
+      "gpt4o_visual_quality_detailed": 1.0
+    },
+    "InstructDiffusion": {
+      "masked_ssim": 0.5,
+      "gpt4o_editing_accuracy_detailed": 7.0,
+      "gpt4o_visual_quality_detailed": 6.0
+    },
+    "Paint-by-Inpaint": {
+      "masked_ssim": 0.5,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 2.0
+    },
+    "ICEdit": {
+      "masked_ssim": 0.8,
+      "gpt4o_editing_accuracy_detailed": 2.0,
+      "gpt4o_visual_quality_detailed": 6.0
+    }
+  },
+  "38": {
+    "Gemini 2 Flash": {
+      "masked_ssim": 0.7,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 8.0
+    },
+    "SeedX": {
+      "masked_ssim": 0.6,
+      "gpt4o_editing_accuracy_detailed": 4.0,
+      "gpt4o_visual_quality_detailed": 2.0
+    },
+    "Imagic SD": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 8.0
+    },
+    "InstructPix2Pix": {
+      "masked_ssim": 1.0,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 10.0
+    },
+    "InstructDiffusion": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 5.0
+    },
+    "Paint-by-Inpaint": {
+      "masked_ssim": 0.6,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 2.0
+    },
+    "ICEdit": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 3.0,
+      "gpt4o_visual_quality_detailed": 3.0
+    }
+  },
+  "48": {
+    "Gemini 2 Flash": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 9.0,
+      "gpt4o_visual_quality_detailed": 8.0
+    },
+    "SeedX": {
+      "masked_ssim": 0.8,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 3.0
+    },
+    "Imagic SD": {
+      "masked_ssim": 0.8,
+      "gpt4o_editing_accuracy_detailed": 2.0,
+      "gpt4o_visual_quality_detailed": 5.0
+    },
+    "InstructPix2Pix": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 8.0,
+      "gpt4o_visual_quality_detailed": 7.0
+    },
+    "InstructDiffusion": {
+      "masked_ssim": 0.7,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 0.0
+    },
+    "Paint-by-Inpaint": {
+      "masked_ssim": 0.8,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 2.0
+    },
+    "ICEdit": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 1.0,
+      "gpt4o_visual_quality_detailed": 3.0
+    }
+  },
+  "50": {
+    "Gemini 2 Flash": {
+      "masked_ssim": 0.8,
+      "gpt4o_editing_accuracy_detailed": 9.0,
+      "gpt4o_visual_quality_detailed": 9.0
+    },
+    "SeedX": {
+      "masked_ssim": 0.8,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 3.0
+    },
+    "Imagic SD": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 1.0,
+      "gpt4o_visual_quality_detailed": 7.0
+    },
+    "InstructPix2Pix": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 5.0,
+      "gpt4o_visual_quality_detailed": 4.0
+    },
+    "InstructDiffusion": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 7.0,
+      "gpt4o_visual_quality_detailed": 8.0
+    },
+    "Paint-by-Inpaint": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 6.0,
+      "gpt4o_visual_quality_detailed": 5.0
+    },
+    "ICEdit": {
+      "masked_ssim": 0.9,
+      "gpt4o_editing_accuracy_detailed": 0.0,
+      "gpt4o_visual_quality_detailed": 5.0
+    }
+  }
+}
