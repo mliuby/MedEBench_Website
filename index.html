@@ -219,6 +219,7 @@
             <th>ICEdit</th>
           </tr>
         </thead>
+
         <tbody>
           <tr>
             <td><img src="assets/images/examples/64_Previous.png" width="80"></td>
@@ -307,7 +308,8 @@
             <td>0.9/0.9/0.7</td>
             <td>0.0/0.4/0.9</td>
           </tr>
-
+        </tbody>
+        <tbody id="more-examples" style="display: none;">
           <tr>
             <td><img src="assets/images/examples/951_Previous.png" width="80"></td>
             <td><img src="assets/images/examples/951_Ground_Truth.png" width="80"></td>
@@ -417,12 +419,13 @@
             <td>0.0/0.2/0.8</td>
             <td>0.1/0.3/0.9</td>
           </tr>
-          
-          
-          
-          <!-- Add more rows as needed, following the same pattern -->
         </tbody>
       </table>
+      <div style="text-align: center; margin-top: 1rem;">
+        <button onclick="document.getElementById('more-examples').style.display='table-row-group'; this.style.display='none';">
+          Show more
+        </button>
+      </div>
       <p style="font-size: 0.9rem; margin-top: 10px;">Each row includes the previous and ground truth images, followed by outputs from seven models. Scores below each output denote EA (Editing Accuracy), VQ (Visual Quality), and CP (Masked SSIM) (all in [0, 1] range).</p>
     </section>
 
@@ -520,6 +523,21 @@
     
     </section>
     
+    <section style="margin-top: 3rem;">
+      <h2>Citation</h2>
+      <p>If you find this work useful, please cite it as follows:</p>
+      <pre style="white-space: pre-wrap; word-break: break-word; background: #f9f9f9; padding: 1rem; border-left: 4px solid #ccc; border-radius: 5px; font-size: 0.9rem;">
+    @misc{liu2025medebenchrevisitingtextinstructedimage, 
+      title={MedEBench: Revisiting Text-instructed Image Editing on Medical Domain}, 
+      author={Minghao Liu and Zhitao He and Zhiyuan Fan and Qingyun Wang and Yi R. Fung},
+      year={2025},
+      eprint={2506.01921},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2506.01921}
+    }
+      </pre>
+    </section>    
     
   </main>
 
